@@ -62,7 +62,6 @@ module.exports = function init (options) {
 
     return {
         config,
-        mysql: require('./lib/mysql'),
         auth: require('./lib/auth'),
         uploader: require('./lib/upload'),
         tunnel: require('./lib/tunnel'),

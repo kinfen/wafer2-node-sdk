@@ -1,14 +1,14 @@
 {
-  "name": "wafer-node-sdk",
-  "version": "1.2.0",
-  "description": "Wafer SDK for Node.js",
+  "name": "wafer-node-mongoose-sdk",
+  "version": "0.0.1",
+  "description": "Wafer SDK for Node.js and mongoose",
   "main": "index.js",
   "scripts": {
     "test": "mocha --reporter spec --ignore-leaks --bail --slow 1000 --recursive test"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/tencentyun/wafer-node-server-sdk.git"
+    "url": "https://github.com/kinfen/wafer-node-server-sdk.git"
   },
   "keywords": [
     "authentication",
@@ -30,7 +30,6 @@
     "knex": "^0.13.0",
     "moment": "^2.18.1",
     "multiparty": "^4.1.3",
-    "mysql": "^2.13.0",
     "read-chunk": "^2.0.0",
     "shortid": "^2.2.8",
     "uuid": "^3.1.0"
