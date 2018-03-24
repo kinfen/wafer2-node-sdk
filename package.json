@@ -1,7 +1,7 @@
 {
   "name": "wafer-node-mongoose-sdk",
-  "version": "0.0.1",
-  "description": "Wafer SDK for Node.js and mongoose",
+  "version": "0.1.0",
+  "description": "Wafer SDK for Node.js and mongoose, fork from the wafer-node-sdk@1.2.0",
   "main": "index.js",
   "scripts": {
     "test": "mocha --reporter spec --ignore-leaks --bail --slow 1000 --recursive test"
@@ -25,7 +25,7 @@
   "license": "MIT",
   "dependencies": {
     "axios": "^0.16.2",
-    "cos-nodejs-sdk-v5": "^2.0.6",
+    "cos-nodejs-sdk-v5": "^2.3.5",
     "file-type": "^5.2.0",
     "knex": "^0.13.0",
     "moment": "^2.18.1",

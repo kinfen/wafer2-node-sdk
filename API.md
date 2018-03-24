@@ -1,5 +1,9 @@
 # Wafer 服务端 SDK API 文档
 
+## 调整 去除所有Koa 及 mysql方案
+中间件对应换为express 及 mongoose，下文中文涉及的相关文件请换成相应的组件
+
+
 ## 命名空间
 
 ```js
@@ -17,13 +21,8 @@ const qcloud = require('wafer-node-sdk')(options)
 - `appId` - 可选。微信小程序的 App id
 - `appSecret` - 可选。微信小程序的 App secret
 - `useQcloudLogin` - 必填。是否使用腾讯云代理登录小程序。会话登录需要使用小程序的 App id 和 App secret 来解密用户信息，腾讯云提供使用腾讯云 App id 和 App secret 代理请求微信进行解密。如果该项为 `false`，则需填写微信小程序 App id 和 App secret。默认为 `true`
-- `mysql` - 必填。MySQL 配置。不填则使用小程序解决方案分配机器中默认的 MySQL，若使用自行部署的 MySQL 数据库，则需提供一个类型为 `object`  的配置，具体配置项如下：
-  - `host` - 必填。MySQL 主机名
-  - `user` - 必填。MySQL 用户名
-  - `db` - 必填。MySQL 数据库名
-  - `pass` - 必填。MySQL 密码，若使用了腾讯云微信小程序解决方案，开发环境下，MySQL 的初始密码为您的微信小程序 appid
-  - `port` - 选填。MySQL 端口（默认：3306）
-  - `char` - 选填。MySQL 编码
+- `mysql` - 被去除，换mongoose
+- `mongoose` - mongoose，connect返回的对象
 - `cos` - 必填。腾讯云对象存储配置信息，用于上传模块使用。
   - `region` - 必填。COS 的地域，具体查看：https://cloud.tencent.com/document/product/436/6224
   - `fileBucket` - 必填。COS 的 bucket 名
@@ -121,11 +120,11 @@ module.exports = (req, res) => {
 
 #### qcloud.auth.authorizationMiddleware(ctx[, next])
 
-用户登录的 Koa 中间件，登录信息将会被写进 `ctx.state.$wxInfo`
+用户登录的 express 中间件，登录信息将会被写进 `req.state.$wxInfo`
 
 **参数**
 
-- `ctx` - `Koa Context` Koa 上下文
+- `req` - `express request` Koa 上下文
 - `next` 
 
 **调用示例**
@@ -145,11 +144,11 @@ router.get('/login', authorizationMiddleware, ctx => {
 
 #### qcloud.auth.validationMiddleware(ctx[, next])
 
-用户登录态校验的 Koa 中间件，登录信息将会被写进 `ctx.state.$wxInfo`
+用户登录态校验的 express 中间件，登录信息将会被写进 `ctx.state.$wxInfo`
 
 **参数**
 
-- `ctx` - `Koa Context` Koa 上下文
+- `req` - `express` express 上下文
 - `next` 
 
 **调用示例**
