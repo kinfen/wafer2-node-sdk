@@ -50,10 +50,6 @@ module.exports = function init (options) {
     const { region, fileBucket, uploadFolder } = cos
     if ([region, fileBucket, uploadFolder].some(v => v === undefined)) throw new Error(ERRORS.ERR_INIT_SDK_LOST_CONFIG)
 
-    if (options.mysql) {
-        const { host, port, user, db, pass } = options.mysql
-        if ([host, port, user, db, pass].some(v => v === undefined)) throw new Error(ERRORS.ERR_INIT_SDK_LOST_CONFIG)
-    }
 
     // 初始化配置
     const configs = config.set(options)
