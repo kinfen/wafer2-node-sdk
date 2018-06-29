@@ -52,7 +52,10 @@ module.exports = function init (options) {
 
 
     // 初始化配置
-    const configs = config.set(options)
+    // options = _.pick(options, [
+    //     "rootPathname", "useQcloudLogin", "cos", "serverHost", "tunnelServerUrl", "tunnelSignatureKey", "qcloudAppId", "qcloudSecretId", "qcloudSecretKey", "wxMessageToken"
+    // ]);
+    const configs = config.set(options);
 
     debug('using config: %o', configs)
 
