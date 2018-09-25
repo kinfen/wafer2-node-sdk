@@ -1,5 +1,5 @@
 {
-  "name": "wafer-node-mongoose-sdk",
+  "name": "@kstudio/wafer-node-mongoose-sdk",
   "version": "0.1.1",
   "description": "Wafer SDK for Node.js and mongoose, fork from the wafer-node-sdk@1.2.0",
   "main": "index.js",
